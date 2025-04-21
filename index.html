@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -18,21 +18,11 @@
         <div class="input-group">
           <label for="from-currency">From</label>
           <select id="from-currency">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="PKR">PKR</option>
-            <option value="GBP">GBP</option>
-            <!-- Add more -->
           </select>
         </div>
         <div class="input-group">
           <label for="to-currency">To</label>
           <select id="to-currency">
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="PKR">PKR</option>
-            <option value="GBP">GBP</option>
-            <!-- Add more -->
           </select>
         </div>
       </div>
@@ -44,4 +34,95 @@
   <script src="countrylist.js"></script>
   <script src="app.js"></script>
 </body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="converter-container">
+    <h2>💸 Currency Converter</h2>
+    <div class="converter-box">
+      <div class="input-group">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" placeholder="Enter amount" />
+      </div>
+
+      <div class="dropdowns">
+        <div class="input-group">
+          <label for="from-currency">From</label>
+          <select id="from-currency"></select>
+        </div>
+        <div class="input-group">
+          <label for="to-currency">To</label>
+          <select id="to-currency"></select>
+        </div>
+      </div>
+
+      <button id="convert-btn">🔄 Convert</button>
+      <div class="result" id="result">Converted amount will appear here.</div>
+    </div>
+  </div>
+
+  <script src="countrylist.js"></script>
+  <script src="app.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="converter-container">
+    
+    <div class="popular-section">
+      <h3>🌍 Popular Currencies</h3>
+      <div class="popular-tags">
+        <span>USD - United States Dollar</span>
+        <span>EUR - Euro</span>
+        <span>JPY - Japanese Yen</span>
+        <span>GBP - British Pound</span>
+      </div>
+    </div>
+
+    <h2>Currency Converter</h2>
+    
+    <div class="converter-box">
+      <div class="input-group">
+        <label for="amount">Amount</label>
+        <input type="number" id="amount" placeholder="Enter amount" />
+      </div>
+
+      <div class="dropdowns">
+        <div class="input-group">
+          <label for="from-currency">From</label>
+          <select id="from-currency"></select>
+        </div>
+        <div class="input-group">
+          <label for="to-currency">To</label>
+          <select id="to-currency"></select>
+        </div>
+      </div>
+      <p id="rate"></p>
+
+      <button id="convert-btn">Convert</button>
+      <div class="result" id="result">Converted amount will appear here.</div>
+    </div>
+
+  </div>
+
+  <script src="countrylist.js"></script>
+  <script src="app.js"></script>
+</body>
 </html>
+
