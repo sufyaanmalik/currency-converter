@@ -214,20 +214,20 @@ function dropdowns() {
       let selected = "";
 
       if (i == 0) {
-        if (currencyCode === "usd") {
+        if (curencyCode === "usd") {
           selected = "selected";
         } else {
           selected = "";
         }
       } else if (i == 1) {
-        if (currencyCode === "pkr") {
+        if (curencyCode === "pkr") {
           selected = "selected";
         } else {
           selected = "";
         }
       }
 
-      options += `<option value="${currencyCode}" ${selected}>${currencyCode.toUpperCase()}</option>`;
+      options += `<option value="${curencyCode}" ${selected}>${curencyCode.toUpperCase()}</option>`;
     }
 
     dropdownList[i].innerHTML = options;
@@ -250,32 +250,32 @@ dropdownList[1].addEventListener("change", () => {
 function addFirstDropdown() {
   let toCurrency = dropdownList[1].value;
   let options = "";
-  for (let currencyCode in country_list) {
-    if (currencyCode === toCurrency) {continue;};
+  for (let curencyCode in country_list) {
+    if (curencyCode === toCurrency) {continue;};
 
     let selected;
-    if (currencyCode === dropdownList[0].value) {
+    if (curencyCode === dropdownList[0].value) {
       selected = "selected";
     } else {
       selected = "";
     }
-    options += `<option value="${currencyCode}" ${selected}>${currencyCode.toUpperCase()}</option>`;
+    options += `<option value="${curencyCode}" ${selected}>${curencyCode.toUpperCase()}</option>`;
   }
   dropdownList[0].innerHTML = options;
 }
 function addSecondDropdown() {
   let fromCurrency = dropdownList[0].value;
   let options = "";
-  for (let currencyCode in country_list) {
-    if (currencyCode === fromCurrency) {continue;};
+  for (let curencyCode in country_list) {
+    if (curencyCode === fromCurrency) {continue;};
 
     let selected;
-    if (currencyCode === dropdownList[1].value) {
+    if (curencyCode === dropdownList[1].value) {
       selected = "selected";
     } else {
       selected = "";
     }
-    options += `<option value="${currencyCode}" ${selected}>${currencyCode.toUpperCase()}</option>`;
+    options += `<option value="${curencyCode}" ${selected}>${curencyCode.toUpperCase()}</option>`;
   }
   dropdownList[1].innerHTML = options;
 }
@@ -294,7 +294,7 @@ async function changeRate() {
   }
 
   let fromCurrency = document.querySelector("#from-currency").value;
-  let ToCurrency = document.querySelector("#to-currency").value;
+  let toCurrency = document.querySelector("#to-currency").value;
   let rateView = document.querySelector("#rate");
 
   try {
@@ -302,14 +302,14 @@ async function changeRate() {
       `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${fromCurrency}.json`
     );
     let getCr = await crApi.json();
-    let rate = getCr[fromCurrency][ToCurrency];
-    rateView.innerHTML = `1 ${fromCurrency.toUpperCase()} = ${rate} ${ToCurrency.toUpperCase()}`;
+    let rate = getCr[fromCurrency][toCurrency];
+    rateView.innerHTML = `1 ${fromCurrency.toUpperCase()} = ${rate} ${toCurrency.toUpperCase()}`;
 
     if (rate) {
       let convertedAmount = (getValue * rate).toFixed(2);
       document.querySelector(
         "#result"
-      ).innerHTML = `Converted Amount is = ${convertedAmount} ${ToCurrency.toUpperCase()}`;
+      ).innerHTML = `Converted Amount is = ${convertedAmount} ${toCurrency.toUpperCase()}`;
     } else {
       document.querySelector("#result").innerHTML = `Conversion rate not found`;
     }
