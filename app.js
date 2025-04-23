@@ -89,7 +89,7 @@ async function changeRate() {
   }
 
   let fromCurrency = document.querySelector("#from-currency").value;
-  let toCurrency = document.querySelector("#to-currency").value;
+  let ToCurrency = document.querySelector("#to-currency").value;
   let rateView = document.querySelector("#rate");
 
   try {
@@ -97,14 +97,14 @@ async function changeRate() {
       `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${fromCurrency}.json`
     );
     let getCr = await crApi.json();
-    let rate = getCr[fromCurrency][toCurrency];
-    rateView.innerHTML = `1 ${fromCurrency.toUpperCase()} = ${rate} ${toCurrency.toUpperCase()}`;
+    let rate = getCr[fromCurrency][ToCurrency];
+    rateView.innerHTML = `1 ${fromCurrency.toUpperCase()} = ${rate} ${ToCurrency.toUpperCase()}`;
 
     if (rate) {
       let convertedAmount = (getValue * rate).toFixed(2);
       document.querySelector(
         "#result"
-      ).innerHTML = `Converted Amount is = ${convertedAmount} ${toCurrency.toUpperCase()}`;
+      ).innerHTML = `Converted Amount is = ${convertedAmount} ${ToCurrency.toUpperCase()}`;
     } else {
       document.querySelector("#result").innerHTML = `Conversion rate not found`;
     }
